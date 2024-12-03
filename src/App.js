@@ -42,6 +42,8 @@ import React, { useState } from "react";
 import { Container, Row, Col, Card, Badge } from "react-bootstrap";
 import TrafficForm from "./components/TrafficForm";
 import Map from "./components/Map";
+import MapWithAdminControls from "./components/MapWithAdminControls";
+import IndiaMapWithHeatmap from "./components/HeatMapComponent";
 
 const App = () => {
   const [predictionData, setPredictionData] = useState(null);
@@ -66,6 +68,7 @@ const App = () => {
       </h1>
       
       <TrafficForm onPrediction={handlePrediction} />
+      <MapWithAdminControls/>
       
       {predictionData && (
         <Row className="mt-4">
@@ -103,6 +106,7 @@ const App = () => {
           </Col>
         </Row>
       )}
+      <IndiaMapWithHeatmap/>
     </Container>
   );
 };
